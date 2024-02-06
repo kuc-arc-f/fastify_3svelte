@@ -32,7 +32,9 @@ fastify.get('/test', (req, reply) => {
 });
 //
 fastify.get('/', async (req, reply) => {
-  return { hello: 'world' }
+//  return { hello: 'world' }
+  reply.type('text/html');
+  reply.send(renderToString(Top()));
 })
 
 /**

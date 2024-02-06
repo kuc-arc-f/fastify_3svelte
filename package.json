@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=develop vite dev",
-    "build": "vite build",
+    "start": "node ./dist/index.js",
+    "build": "node build.js",
     "build:test": "vite build && vite build --mode client",
     "test": "ts-node src/index.ts"
   },
