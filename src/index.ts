@@ -1,4 +1,3 @@
-// ESM
 import Fastify from 'fastify'
 import path from 'node:path';
 import { fileURLToPath } from 'url';
@@ -12,7 +11,7 @@ if(process.env.NODE_ENV === 'develop'){
 }else{
   __dirname = __dirname.replace("/dist", '');
 }
-console.log("ENV=", process.env.NODE_ENV);
+console.log("ENV.value=", process.env.NODE_ENV);
 console.log("__dirname=", __dirname);
 //
 const fastify = Fastify({
