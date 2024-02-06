@@ -26,6 +26,14 @@ npx vite build --mode client --watch
 ```
 ***
 ### fastify-build
+
+* dev-start
+
+```
+yrn dev
+```
+
+* build
 ```
 node build.js
 ```
