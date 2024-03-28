@@ -30,7 +30,7 @@ fastify.get('/test', (req, reply) => {
   reply.send(renderToString(Top()));
 });
 //
-fastify.get('/', async (req, reply) => {
+fastify.get('/*', async (req, reply) => {
 //  return { hello: 'world' }
   reply.type('text/html');
   reply.send(renderToString(Top()));
@@ -41,6 +41,7 @@ fastify.get('/', async (req, reply) => {
  */
 const start = async () => {
   try {
+    console.log("#start_posrt:3000");
     await fastify.listen({ port: 3000 })
   } catch (err) {
     fastify.log.error(err)

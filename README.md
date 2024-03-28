@@ -1,12 +1,12 @@
 ﻿# fastify_3svelte
 
- Version: 0.9.1
+ Version: 0.9.2
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
  date    : 2024/02/04
 
- update  : 2024/02/06
+ update  : 2024/03/27
 
 ***
 ### Summary

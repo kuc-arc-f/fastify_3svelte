@@ -1,30 +1,46 @@
 <script lang="ts">
-import Router from 'svelte-spa-router'
-//
-import Head from './components/Head.svelte'
-import Home from './client/Home.svelte'
-import About from './client/About.svelte'
-import Test1 from './client/Test1.svelte'
-//
-import NotFound from './client/NotFound.svelte'
-
-export const routes = {
-  '/': Home,
-  '/about': About,
+  import Router from 'svelte-spa-router'
   //
-  '/test1': Test1,
+  import Head from './components/Head.svelte'
   //
-  '*': NotFound,
-}
+  const pages = import.meta.glob('./client/*.svelte', { eager: true })
+  
+  const routes = Object.keys(pages).map((path) => {
+    const name = path.match(/\.\/client\/(.*)\.svelte$/)[1]
+    return {
+      name,
+      path: name === 'Home' ? '/' : `/${name.toLowerCase()}`,
+      component: pages[path].default,
+    }
+  })
+  export let routeArray = {};
+  routes.forEach((item, idx) => {
+    console.log(item)
+    let path = item.path;
+    let compo = item.component;
+    //@ts-ignore
+  //  routeArray['key_' + idx] = 'value_' + idx;
+    routeArray[item.path] = compo;
+  });
+  console.log(routeArray);
 </script>
-
+  
 <!-- -->
 <main>
-    <Head />
-    <h1>Vite + Svelte</h1>
-    <Router {routes} />
+    <nav>
+    {#each routes as item}
+    <div>
+      <a href={`/#${item.path}`}>{item.name}</a>
+    </div>
+    {/each}	
+    </nav>
+    <hr />
+    <Router routes={routeArray} />
     <hr />
 </main>
-
+  
 <style>
 </style>
+<!--
+-->
+  
