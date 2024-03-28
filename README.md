@@ -16,35 +16,18 @@ fastify SSR + Svelte sample
 * vercel deploy
 
 ***
-### svelte-build
+###  build
 
 ```
-npx vite build --mode client
+yarn build
 
-# watch-mode
-npx vite build --mode client --watch
-```
-***
-### fastify-build
-
-* dev-start
-
-```
-yrn dev
+yarn dev
 ```
 
-* build
-```
-node build.js
-```
-* start
-```
-node ./dist/index.js
-```
 ***
 ### blog 
 
-https://zenn.dev/knaka0209/scraps/fe7d58968b1569
+https://zenn.dev/knaka0209/books/b1bd883fb8dd95
 
 ***
 
